@@ -47,6 +47,10 @@ cat << CTAG
 	}},
 	{ SLiveLabel:{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+		title:"Battery",
+>>>>>>> 1d70600f8... Worked on some Synapse files
 		refresh:10000,
 		action:"show battinfo"	
 	}},

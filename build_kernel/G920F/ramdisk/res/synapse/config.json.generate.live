@@ -2,7 +2,7 @@
 
 cat << CTAG
 {
-    name:LIVE STATISTICS,
+    name:"Live Statistics",
     elements:[
 	{ SPane:{
 		title:"CPU Activity",
@@ -46,9 +46,28 @@ cat << CTAG
 		height:1
 	}},
 	{ SLiveLabel:{
+<<<<<<< HEAD
 		refresh:10000,
 		action:"show battinfo"	
 	}},
+=======
+		title:"Battery",
+		refresh:2000,
+		action:"show battinfo"	
+	}},
+	{ SSpacer:{
+		height:1
+	}},
+	{ SLiveLabel:{
+		title:"GPU",
+		refresh:2500,
+		action:"live gpu"	
+	}},
+	{ SLiveLabel:{
+		refresh:2500,
+		action:"live gpu_load"	
+	}},
+>>>>>>> e636f5665... Add support for Synapse [2/2] (Thanks to thehacker911)
 	]
 }
 CTAG

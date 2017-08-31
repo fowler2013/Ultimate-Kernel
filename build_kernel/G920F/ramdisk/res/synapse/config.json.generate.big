@@ -59,6 +59,7 @@ cat << CTAG
 		]
 	}},
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	{ SPane:{
 		title:"HPM Voltage Control",
@@ -70,6 +71,8 @@ cat << CTAG
 		action:"generic /sys/kernel/debug/mailbox/atl_cl_margin",
 		unit:"µV", weight:6250.0, min:0, step:1, max:10
 	}},
+=======
+>>>>>>> e636f5665... Add support for Synapse [2/2] (Thanks to thehacker911)
 	{ SPane:{
 		title:"CPU voltage control",
 		description:"Decreasing voltage will lower power consumption of the CPU. Increasing it on overclocked frequencies improves stability. Too low voltage may cause instabilities and freezes."
@@ -81,7 +84,10 @@ while read FREQ VOLT; do
 	echo ', action:"c1volt '${FREQ}'", unit:"mV", weight:0.001, min:500000, step:6250, max:1125000 }},'
 done < /sys/devices/system/cpu/cpufreq/mp-cpufreq/cluster1_volt_table
 `
+<<<<<<< HEAD
 >>>>>>> 10c812e57... Synapse: Fixed some bugs, added Doze control and more improvements and features
+=======
+>>>>>>> e636f5665... Add support for Synapse [2/2] (Thanks to thehacker911)
 
     ]
 }

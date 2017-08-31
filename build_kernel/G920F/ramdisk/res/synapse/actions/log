@@ -1,6 +1,6 @@
 # Script make by UpInTheAir
 TIMESTAMP=`date +%Y-%m-%d.%H.%M.%S`;
-LOGS=/sdcard/hackerkernel/Logs;
+LOGS=/sdcard/aldeon/logs;
 
 if [ "$($BB mount | grep system | grep -c ro)" -eq "1" ]; then
 	$BB mount -o remount,rw /system;

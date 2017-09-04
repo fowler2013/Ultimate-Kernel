@@ -4,6 +4,7 @@ cat << CTAG
 {
     name:"Memory Bus",
     elements:[
+<<<<<<< HEAD
 	{ SPane:{
 		title:"HPM Voltage Control",
         }},
@@ -14,6 +15,8 @@ cat << CTAG
 		action:"generic /sys/kernel/debug/mailbox/mif_cl_margin",
 		unit:"µV", weight:6250.0, min:0, step:1, max:10
 	}},
+=======
+>>>>>>> 95dffdba5... Synapse: Added controls for memory bus voltages
 	{ SPane:{ title:"Memory Bus Voltage control",
 		description:"Voltage supplied to the CCI and memory controllers." }},
 `

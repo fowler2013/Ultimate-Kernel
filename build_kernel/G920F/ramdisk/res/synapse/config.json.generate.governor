@@ -49,6 +49,7 @@ cat << CTAG
 					exclude: [
 						"boostpulse",
 <<<<<<< HEAD
+<<<<<<< HEAD
 						"cpu_util",
 <<<<<<< HEAD
 						"enforced_mode",
@@ -65,6 +66,13 @@ cat << CTAG
 =======
 						"sampling_rate_min"
 >>>>>>> e636f5665... Add support for Synapse [2/2] (Thanks to thehacker911)
+=======
+						"sampling_rate_min",
+						"target_loads",
+						"param_index",
+						"cpu_util",
+						"above_hispeed_delay"
+>>>>>>> 49e1ebada... Synapse: Fixed bugs and improvements
 					]
 				},
 			}
@@ -110,6 +118,7 @@ cat << CTAG
 					exclude: [
 						"boostpulse",
 <<<<<<< HEAD
+<<<<<<< HEAD
 						"cpu_util",
 <<<<<<< HEAD
 						"enforced_mode",
@@ -126,6 +135,13 @@ cat << CTAG
 =======
 						"sampling_rate_min"
 >>>>>>> e636f5665... Add support for Synapse [2/2] (Thanks to thehacker911)
+=======
+						"sampling_rate_min",
+						"target_loads",
+						"param_index",
+						"cpu_util",
+						"above_hispeed_delay"
+>>>>>>> 49e1ebada... Synapse: Fixed bugs and improvements
 					]
 				},
 			}

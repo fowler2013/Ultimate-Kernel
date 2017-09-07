@@ -1,12 +1,9 @@
 # By UpInTheAir for SkyHigh kernels
 
-BB=/system/xbin/busybox;
-
-if [ "$($BB mount | grep rootfs | cut -c 26-27 | grep -c ro)" -eq "1" ]; then
-	$BB mount -o remount,rw /;
-fi;
-if [ "$($BB mount | grep system | grep -c ro)" -eq "1" ]; then
-	$BB mount -o remount,rw /system;
+if [ ! -f /su/xbin/busybox ]; then
+	BB=/system/xbin/busybox;
+else
+	BB=/su/xbin/busybox;
 fi;
 
 if [ "$($BB mount | grep system | grep -c ro)" -eq "1" ]; then
@@ -293,8 +290,11 @@ IPv6)
   ;;
 esac
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 $BB mount -t rootfs -o remount,ro rootfs;
 =======
 >>>>>>> 10c812e57... Synapse: Fixed some bugs, added Doze control and more improvements and features
 $BB mount -o remount,ro /system;
+=======
+>>>>>>> 49e1ebada... Synapse: Fixed bugs and improvements

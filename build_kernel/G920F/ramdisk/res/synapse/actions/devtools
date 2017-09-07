@@ -1,4 +1,8 @@
-BB=/system/xbin/busybox;
+if [ ! -f /su/xbin/busybox ]; then
+	BB=/system/xbin/busybox;
+else
+	BB=/su/xbin/busybox;
+fi;
 
 if [ "$($BB mount | grep system | grep -c ro)" -eq "1" ]; then
 	$BB mount -o remount,rw /system;

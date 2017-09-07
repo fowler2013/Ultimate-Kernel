@@ -48,6 +48,7 @@ cat << CTAG
 	{ SLiveLabel:{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		title:"Battery",
 >>>>>>> 1d70600f8... Worked on some Synapse files
@@ -55,6 +56,16 @@ cat << CTAG
 		action:"show battinfo"	
 	}},
 =======
+=======
+		title:"CPU temperature",
+		refresh:2000,
+		action:"live cputemp"	
+	}},
+	{ SSpacer:{
+		height:1
+	}},
+	{ SLiveLabel:{
+>>>>>>> 49e1ebada... Synapse: Fixed bugs and improvements
 		title:"Battery",
 		refresh:2000,
 		action:"show battinfo"	
@@ -71,7 +82,18 @@ cat << CTAG
 		refresh:2500,
 		action:"live gpu_load"	
 	}},
+<<<<<<< HEAD
 >>>>>>> e636f5665... Add support for Synapse [2/2] (Thanks to thehacker911)
+=======
+	{ SSpacer:{
+		height:1
+	}},
+	{ SLiveLabel:{
+		title:"Memory",
+		refresh:2000,
+		action:"live LiveMemory"	
+	}},
+>>>>>>> 49e1ebada... Synapse: Fixed bugs and improvements
 	]
 }
 CTAG

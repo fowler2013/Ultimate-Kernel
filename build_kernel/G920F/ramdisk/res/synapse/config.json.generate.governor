@@ -50,6 +50,7 @@ cat << CTAG
 						"above_hispeed_delay",
 						"boostpulse",
 						"cpu_util",
+<<<<<<< HEAD
 						"enforced_mode",
 						"go_hispeed_load",
 						"hispeed_freq",
@@ -57,6 +58,10 @@ cat << CTAG
 						"sampling_rate_min",
 						"single_cluster0_min_freq",
 						"target_loads"
+=======
+						"mode",
+						"above_hispeed_delay"
+>>>>>>> 10c812e57... Synapse: Fixed some bugs, added Doze control and more improvements and features
 					]
 				},
 			}
@@ -103,6 +108,7 @@ cat << CTAG
 						"above_hispeed_delay",
 						"boostpulse",
 						"cpu_util",
+<<<<<<< HEAD
 						"enforced_mode",
 						"go_hispeed_load",
 						"hispeed_freq",
@@ -110,6 +116,10 @@ cat << CTAG
 						"sampling_rate_min",
 						"single_cluster0_min_freq",
 						"target_loads"
+=======
+						"mode",
+						"above_hispeed_delay"
+>>>>>>> 10c812e57... Synapse: Fixed some bugs, added Doze control and more improvements and features
 					]
 				},
 			}

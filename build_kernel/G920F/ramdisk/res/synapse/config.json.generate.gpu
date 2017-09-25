@@ -155,6 +155,7 @@ cat << CTAG
 	}},
 	{ SPane:{
 		title:"HPM Voltage Control",
+<<<<<<< HEAD
         }},
 	{ SSpacer:{
 		height:1
@@ -163,6 +164,13 @@ cat << CTAG
 		title:"Mali HPM voltage margin",
 		description:" Set the maximum voltage margin the APM undervolts down to.\n",
 		default:`cat /sys/kernel/debug/mailbox/g3d_cl_margin`,
+=======
+	}},
+	{ SSeekBar:{
+		title:"Mali HPM voltage margin",
+		description:"Set the maximum voltage margin the APM undervolts down to.\n",
+		default:$(cat /sys/kernel/debug/mailbox/g3d_cl_margin),
+>>>>>>> 10c812e57... Synapse: Fixed some bugs, added Doze control and more improvements and features
 		action:"generic /sys/kernel/debug/mailbox/g3d_cl_margin",
 		unit:" µV", weight:6250.0, min:0, step:1, max:10
 	}},

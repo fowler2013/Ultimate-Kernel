@@ -123,10 +123,14 @@ version)
   ;;
 kernel_version)
 <<<<<<< HEAD
+<<<<<<< HEAD
   echo "3.0"
 =======
   echo "3.4"
 >>>>>>> bc45bb3aa... Synapse: Add dt2w tab and fix A53 max freq being reset plus fix missing A53 200 MHz time in state
+=======
+  echo "3.2"
+>>>>>>> 10c812e57... Synapse: Fixed some bugs, added Doze control and more improvements and features
   ;;
 android_version)
   echo `getprop ro.build.version.release`

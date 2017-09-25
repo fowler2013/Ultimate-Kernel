@@ -56,6 +56,7 @@ cat << CTAG
 			`. /res/synapse/config.json.generate.dt2w`
 >>>>>>> bc45bb3aa... Synapse: Add dt2w tab and fix A53 max freq being reset plus fix missing A53 200 MHz time in state
 			`. /res/synapse/config.json.generate.network`
+			`. /res/synapse/config.json.generate.doze`
 			`. /res/synapse/config.json.generate.logs`
 			`. /res/synapse/config.json.generate.reboot`
 			`. /res/synapse/config.json.generate.profile`

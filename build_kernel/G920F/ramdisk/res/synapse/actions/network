@@ -9,6 +9,10 @@ if [ "$($BB mount | grep system | grep -c ro)" -eq "1" ]; then
 	$BB mount -o remount,rw /system;
 fi;
 
+if [ "$($BB mount | grep system | grep -c ro)" -eq "1" ]; then
+	$BB mount -o remount,rw /system;
+fi;
+
 case $1 in
 tcp_security)
   P=/res/synapse/hrtkernel/tcp_security
@@ -288,6 +292,9 @@ IPv6)
   fi
   ;;
 esac
+<<<<<<< HEAD
 
 $BB mount -t rootfs -o remount,ro rootfs;
+=======
+>>>>>>> 10c812e57... Synapse: Fixed some bugs, added Doze control and more improvements and features
 $BB mount -o remount,ro /system;

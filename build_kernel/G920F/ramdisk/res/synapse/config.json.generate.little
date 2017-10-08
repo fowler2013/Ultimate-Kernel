@@ -17,8 +17,13 @@ cat << CTAG
 	{ SSeekBar:{
        		title:"CPU max frequency",
 		description:"Set the maximum freqency the CPU scales up to.",
+<<<<<<< HEAD
 		default:`cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq`,
 		action:"generic /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq",
+=======
+		default:1500000,
+		action:"generic2 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq",
+>>>>>>> bc45bb3aa... Synapse: Add dt2w tab and fix A53 max freq being reset plus fix missing A53 200 MHz time in state
 		values:{
 `
 			for FREQ in $(cat /sys/devices/system/cpu/cpufreq/mp-cpufreq/cluster0_freq_table); do

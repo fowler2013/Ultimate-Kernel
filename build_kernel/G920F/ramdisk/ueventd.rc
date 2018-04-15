@@ -19,9 +19,10 @@ subsystem adf
 /dev/hw_random            0440   root       system
 /dev/ashmem               0666   root       root
 /dev/binder               0666   root       root
-/dev/hidraw1              0664   root       system
+/dev/hwbinder             0666   root       root
+/dev/vndbinder            0666   root       root
 /dev/ovr*                 0664   root       system
-
+/dev/tvr*                 0664   root       system
 # Anyone can read the logs, but if they're not in the "logs"
 # group, then they'll only see log entries for their UID.
 /dev/log/*                0666   root       log
@@ -42,9 +43,13 @@ subsystem adf
 /dev/android_adb          0660   adb        adb
 /dev/android_adb_enable   0660   adb        adb
 /dev/ttyMSM0              0600   bluetooth  bluetooth
-/dev/uhid                 0660   system     net_bt_stack
-/dev/uinput               0660   system     net_bt_stack
+/dev/uhid                 0660   system     bluetooth
+
+/dev/uinput               0660   system     bluetooth
 /dev/alarm                0664   system     radio
+
+
+
 /dev/rtc0                 0640   system     system
 /dev/tty0                 0660   root       system
 /dev/graphics/*           0660   root       graphics

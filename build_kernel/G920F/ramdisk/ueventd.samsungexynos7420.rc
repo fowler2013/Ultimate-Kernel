@@ -75,13 +75,6 @@
 /dev/video160             0660   cameraserver      cameraserver
 /dev/media2               0660   media      media
 
-# MobiCore
-#/dev/mobicore             0600   drmrpc     drmrpc
-#/dev/mobicore-user        0660   drm        drmrpc
-
-# Secure MEM driver
-#/dev/s5p-smem             0660   drm        drmrpc
-
 # interactive governor parameters
 /sys/devices/system/cpu/cpu*   cpufreq/interactive/timer_rate                  0660    system  system
 /sys/devices/system/cpu/cpu*   cpufreq/interactive/timer_slack                 0660    system  system
@@ -127,6 +120,7 @@
 # sensor sysfs properties
 /sys/devices/virtual/input/input*	poll_delay	0660	system	radio
 /sys/devices/virtual/input/input*	enable		0660	system	radio
+/dev/input/event*	  0660   system		input
 
 # Sensorhub IIO
 /dev/ssp_sensorhub        0660   system		system
@@ -134,6 +128,7 @@
 /sys/devices/14d30000.spi/spi_master/spi1/spi1.0/iio:device*    buffer/enable       0660    system    system
 /sys/devices/14d30000.spi/spi_master/spi1/spi1.0/iio:device*    buffer/length       0660    system    system
 /sys/bus/iio/devices/iio:device*    0664   system     radio
+/sys/bus/iio/devices/iio:device*	poll_delay	0660	system	system
 
 # Broadcom Sensorhub Bridge Driver
 /dev/bbd_sensor           0660   system     system
@@ -143,9 +138,6 @@
 /dev/bbd_sio              0660   system     system
 /dev/bbd_patch            0660   system     system
 /dev/ttyBCM*              0660   system     system
-
-# Reactivation lock
-/dev/block/platform/15570000.ufs/by-name/STEADY    0660    system    system
 
 # Google FRP solution
 /dev/block/platform/15570000.ufs/by-name/PERSISTENT    0660    system    system

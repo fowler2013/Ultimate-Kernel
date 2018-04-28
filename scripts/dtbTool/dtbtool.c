@@ -47,11 +47,9 @@
 
 #define DTBH_MAGIC		"DTBH"
 #define DTBH_VERSION	2
-#define DTBH_PLATFORM	"android"
-#define DTBH_SUBTYPE	"samsung"
-/* Hardcoded entry */
-#define DTBH_PLATFORM_CODE 0x50a6
-#define DTBH_SUBTYPE_CODE  0x217584da
+
+uint32_t dt_platform_code = 0;
+uint32_t dt_subtype_code = 0;
 
 struct dt_blob;
 
@@ -135,8 +133,6 @@ static void *load_dtbh_block(const char *dtb_path, unsigned pagesize, unsigned *
 	unsigned blob_sz = 0;
 	char fname[PATH_MAX];
 	const unsigned *prop_chip;
-	const unsigned *prop_platform;
-	const unsigned *prop_subtype;
 	const unsigned *prop_hw_rev;
 	const unsigned *prop_hw_rev_end;
 	const unsigned *prop_compatible;
@@ -175,20 +171,6 @@ static void *load_dtbh_block(const char *dtb_path, unsigned pagesize, unsigned *
 		prop_chip = fdt_getprop(dtb, offset, "model_info-chip", &len);
 		if (len % (sizeof(uint32_t)) != 0) {
 			warnx("model_info-chip of %s is of invalid size, skipping", fname);
-			free(dtb);
-			continue;
-		}
-
-		prop_platform = fdt_getprop(dtb, offset, "model_info-platform", &len);
-		if (strcmp((char *)&prop_platform[0], DTBH_PLATFORM)) {
-			warnx("model_info-platform of %s is invalid, skipping", fname);
-			free(dtb);
-			continue;
-		}
-
-		prop_subtype = fdt_getprop(dtb, offset, "model_info-subtype", &len);
-		if (strcmp((char *)&prop_subtype[0], DTBH_SUBTYPE)) {
-			warnx("model_info-subtype of %s is invalid, skipping", fname);
 			free(dtb);
 			continue;
 		}
@@ -243,8 +225,8 @@ static void *load_dtbh_block(const char *dtb_path, unsigned pagesize, unsigned *
 		entry = &entries[entry_count];
 		memset(entry, 0, sizeof(*entry));
 		entry->chip = ntohl(prop_chip[0]);
-		entry->platform = DTBH_PLATFORM_CODE;
-		entry->subtype = DTBH_SUBTYPE_CODE;
+		entry->platform = dt_platform_code;
+		entry->subtype = dt_subtype_code;
 		entry->hw_rev = ntohl(prop_hw_rev[0]);
 		entry->hw_rev_end = ntohl(prop_hw_rev_end[0]);
 		entry->space = 0x20; /* space delimiter */
@@ -321,6 +303,8 @@ int usage(void)
 			"      [ -s|--pagesize <pagesize> ]\n"
 			"      -d|--dtb <dtb path>\n"
 			"      -o|--output <filename>\n"
+			"      --platform <hex platform code>\n"
+			"      --subtype <hex subtype code>\n"
 			);
 	return 1;
 }
@@ -357,6 +341,10 @@ int main(int argc, char **argv)
 			dt_dir = val;
 		else if (!strcmp(arg, "--output") || !strcmp(arg, "-o"))
 			dt_img = val;
+		else if (!strcmp(arg, "--platform"))
+			dt_platform_code = strtoul(val, 0, 16);
+		else if (!strcmp(arg, "--subtype"))
+			dt_subtype_code = strtoul(val, 0, 16);
 		else
 			return usage();
 	}
@@ -368,6 +356,16 @@ int main(int argc, char **argv)
 
 	if (dt_dir == 0) {
 		fprintf(stderr,"error: no dtb input directory specified\n");
+		return usage();
+	}
+
+	if (dt_platform_code == 0) {
+		fprintf(stderr,"error: no dtb platform code specified\n");
+		return usage();
+	}
+
+	if (dt_subtype_code == 0) {
+		fprintf(stderr,"error: no dtb subtype code specified\n");
 		return usage();
 	}
 

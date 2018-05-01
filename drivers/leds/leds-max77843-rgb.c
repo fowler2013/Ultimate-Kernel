@@ -711,17 +711,6 @@ static ssize_t store_max77843_rgb_pattern(struct device *dev,
 		max77843_rgb_set_state(&max77843_rgb->led[RED], led_dynamic_current, LED_BLINK);
 		break;
 	case MISSED_NOTI:
-<<<<<<< HEAD
-	if (leds_control.noti_ramp_control == 1)
-		max77843_rgb_ramp(dev, leds_control.noti_ramp_up, leds_control.noti_ramp_down);
-		max77843_rgb_blink(dev, leds_control.noti_delay_on, leds_control.noti_delay_off);
-		max77843_rgb_set_state(&max77843_rgb->led[BLUE], led_dynamic_current, LED_BLINK);
-		break;
-	case LOW_BATTERY:
-	if (leds_control.noti_ramp_control == 1)
-		max77843_rgb_ramp(dev, leds_control.noti_ramp_up, leds_control.noti_ramp_down);
-		max77843_rgb_blink(dev, leds_control.noti_delay_on, leds_control.noti_delay_off);
-=======
 		if (led_enable_fade)
 		{
 			max77843_rgb_ramp(dev, led_fade_time_up, led_fade_time_down);
@@ -743,7 +732,6 @@ static ssize_t store_max77843_rgb_pattern(struct device *dev,
 		{
 			max77843_rgb_blink(dev, 500, 5000);
 		}
->>>>>>> 127455a0946... squashed Fade-LED support
 		max77843_rgb_set_state(&max77843_rgb->led[RED], led_dynamic_current, LED_BLINK);
 		break;
 	case FULLY_CHARGED:
